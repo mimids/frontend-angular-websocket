@@ -1,0 +1,68 @@
+<h1>Chat</h1>
+<div class="flex">
+  <div>
+    <form class="chat-form" #chatForm="ngForm">
+      <mat-form-field class="chat-full-width" appearance="fill">
+        <mat-label>Your Name</mat-label>
+        <input matInput placeholder="Ex.mimi" value="mimi" [(ngModel)]="user.name" #name="ngModel" name="name">
+      </mat-form-field>
+
+      <mat-form-field class="chat-full-width" appearance="fill">
+        <mat-label>Message</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="user.message" #message="ngModel"
+          name="message"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="onClick()">Click</button>
+    </form>
+
+
+    <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8 chat-table">
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id.</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      </ng-container>
+
+      <!-- mzssage Column -->
+      <ng-container matColumnDef="message">
+        <th mat-header-cell *matHeaderCellDef>Message</th>
+        <td mat-cell *matCellDef="let element">{{element.message}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+
+  <div>
+    <form class="chat-form" #chatForm="ngForm">
+      <mat-form-field class="chat-full-width" appearance="fill">
+        <mat-label>Salon Name</mat-label>
+        <input matInput placeholder="Ex.salon" value="name" [(ngModel)]="salon.name" #salon.name="ngModel"
+          name="salon.name">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="onClickSalon()">Click</button>
+    </form>
+
+    <table mat-table tableSalon #tableSalon [dataSource]="dataSourceSalon" class="mat-elevation-z8 chat-table">
+
+      <!-- Salon Column -->
+      <ng-container matColumnDef="salon">
+        <th mat-header-cell *matHeaderCellDef>Salon</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsSalon"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsSalon;"></tr>
+    </table>
+  </div>
+
+</div>

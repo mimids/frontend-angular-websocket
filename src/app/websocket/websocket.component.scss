@@ -1,0 +1,47 @@
+
+h1{
+  text-align: center;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+}
+
+.chat-table {
+    margin-top: 40px;
+    width: 80%;
+}
+  
+  .mat-column-demo-position {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+  }
+  
+  .mat-column-demo-name {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+  
+  .mat-column-demo-weight {
+    font-style: italic;
+  }
+  
+  .mat-column-demo-symbol {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .chat-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .chat-full-width {
+    width: 100%;
+  }
+  
